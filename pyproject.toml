@@ -1,0 +1,21 @@
+[project]
+name = "video-transcriber"
+version = "0.1.0"
+description = "Batch transcription of videos with WhisperX, with optional speaker labels"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "python-dotenv>=1.2.3",
+    "torch",
+    "torchaudio",
+    "whisperx>=3.7.2",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
+torchaudio = { index = "pytorch-cu124" }
